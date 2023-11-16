@@ -20,7 +20,12 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(cors())
 
 /* ROUTES */
-// app.use()
+app.get('/', (req, resp, next) => {
+    resp.status(200).send(JSON.stringify({
+        message: 'Hello'
+    }))
+    next()
+})
 
 const PORT = process.env.PORT || 3000
 
